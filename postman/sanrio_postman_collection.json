@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "Sanrio API",
+    "_postman_id": "a1b2c3d4-5678-90ef-ghij-klmnopqrstuv",
+    "description": "Postman collection for the Sanrio API (FastAPI + Elasticsearch). Includes CRUD, search, health, logs, and utilities.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Characters",
+      "item": [
+        {
+          "name": "Create Character",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hello Kitty\",\n  \"species\": \"Cat\",\n  \"debut_year\": 1974\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/characters",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["characters"]
+            }
+          }
+        },
+        {
+          "name": "Get Character by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/characters/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["characters", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Character",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hello Kitty\",\n  \"species\": \"Cat\",\n  \"debut_year\": 1976\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/characters/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["characters", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Character",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8000/characters/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["characters", "1"]
+            }
+          }
+        },
+        {
+          "name": "Search Characters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/search?q=kitty&page=1&size=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["search"],
+              "query": [
+                { "key": "q", "value": "kitty" },
+                { "key": "page", "value": "1" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
