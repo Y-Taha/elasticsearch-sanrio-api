@@ -76,7 +76,7 @@
           }
         },
         {
-          "name": "Search Characters",
+          "name": "Search Characters Normal",
           "request": {
             "method": "GET",
             "url": {
@@ -88,7 +88,27 @@
               "query": [
                 { "key": "q", "value": "kitty" },
                 { "key": "page", "value": "1" },
-                { "key": "size", "value": "10" }
+                { "key": "size", "value": "10" },
+                { "key": "fuzzy", "value": "false" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Characters Fuzzy",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/search?q=kity&page=1&size=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["search"],
+              "query": [
+                { "key": "q", "value": "kitty" },
+                { "key": "page", "value": "1" },
+                { "key": "size", "value": "10" },
+                { "key": "fuzzy", "value": "true" }
               ]
             }
           }
