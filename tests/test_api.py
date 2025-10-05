@@ -1,9 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
-from app.main import app
-from app.schemas import CharacterCreate
-from app.models import CHAR_INDEX
-from app.elastic_client import get_es_client
+from main import app
+from schemas import CharacterCreate
+from models import CHAR_INDEX
+from elastic_client import get_es_client
 
 client = TestClient(app)
 es = get_es_client()

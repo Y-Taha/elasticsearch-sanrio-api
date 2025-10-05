@@ -56,7 +56,7 @@ See Postman collection `postman/sanrio_postman_collection.json` for example call
 ## Testing
 
 ```bash
-pytest -q
+PYTHONPATH=/app pytest -v
 ```
 
 ## Port check script
